@@ -1,3 +1,7 @@
+--Elisa Garcia Zafra
+--Ejercicios: Tarea 2 
+
+
 --
 -- creamos tabla email
 --  
@@ -29,7 +33,9 @@ INSERT INTO email VALUES ('Rocket', 'shhhhhhhh@darknet.ru'); --------
 
 --
 -- creamos query que regrese direcciones de correo invalidas
-select e.email_address 
+select e.email_address ,e.email_user 
 from email e 
-where e.email_address like '%@%.%' ;
+where e.email_address like '%@%._%' and e.email_address not like '%^@%._%';
+
+--mails que debe regresar: wanda,pietro,erik,tony,vision,clint,natasha,logan,ororo,nathan,groot,nebula,rocket
 
