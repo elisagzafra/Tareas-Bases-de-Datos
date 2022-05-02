@@ -33,7 +33,7 @@ INSERT INTO email VALUES ('Rocket', 'shhhhhhhh@darknet.ru'); --------
 
 --
 -- creamos query que regrese direcciones de correo invalidas
-select e.email_address ,e.email_user 
+select e.email_address
 from email e 
 where e.email_address like '%@%._%' and e.email_address not like '%^@%._%';
 
