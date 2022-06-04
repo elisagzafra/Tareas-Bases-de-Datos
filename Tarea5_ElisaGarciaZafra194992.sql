@@ -15,7 +15,7 @@
 --Sacamos datos necesarios para resolver el problema
 with 
 	films_per_store as( 
-	select i.store_id, count(i.film_id) as num_films
+	select i.store_id as store_id, count(i.film_id) as num_films
 	from inventory i
 	group by i.store_id),
 	
@@ -34,8 +34,8 @@ with
 	from cyl_height h, cyl_radius r)
 	
 --Ahora podemos saber cuantos cilindros necesitamos
-	select i.store_id, ceil(f.num_films/100) as cyl_per_store 
-	from inventory i, films_per_store f;
+	select f.store_id, ceil(f.num_films/100) as cyl_per_store 
+	from films_per_store f;
 
 	
 	
